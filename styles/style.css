@@ -1,5 +1,375 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
+
+.header{
+  min-block-size: 668px;
+  padding: 10px;
+  margin-block-end: 40px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header__decor-item {
+  display: block;
+  position: absolute;
+  right: 38px;
+  top: 10px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.header__decor-item::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 7px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px #FF0070;
+}
+
+.header__theme-menu {
+   justify-self: end;
+   align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid #FF007066;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  border: solid 1px currentColor;
+  pointer-events: none
+}
+
+.title {
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color);
+}
+
+.header__title-description {
+  font-weight: 700;
+  align-self: center;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.section {
+  padding-inline: 10px;
+  display: grid;
+  gap: 20px;
+}
+
+.section:not(:last-of-type) {
+  margin-block-end: 50px;
+}
+
+.section__title {
+  color: var(--accent-color);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+  cursor: pointer;
+}
+
+.text-link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section__title-description {
+  font-weight: 700;
+}
+
+.card__title-no-decor {
+  font-weight: 400;
+}
+
+.section__pictures {
+  gap: 10px;
+}
+
+.picture {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.footer {
+  min-block-size: 668px;
+  margin-block-start: 40px;
+  padding: 10px;
+  display: grid;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.footer__title {
+  justify-self: center;
+  align-self: center;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 2px 2px 0 var(--accent-color);
+  color: var(--title-color); 
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 20px;
+    margin-block-end: 60px;
+    aspect-ratio: 3 / 4;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    position: relative;
+    right: 20px;
+  }
+
+  .header__title-description {
+    inline-size: 50%;
+    justify-self: end;
+  }
+
+  .header__decor-item {
+    top: 20px;
+    right: 50px;
+  }
+
+  .header::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .section {
+    padding-inline: 20px;
+  }
+
+  .section:not(:last-of-type) {
+    margin-block-end: 80px;
+  }
+
+  .section:not(.section__pictures) {
+    grid-template-columns: 236px auto;
+  }
+
+  .section__why .section__title {
+    grid-column: 1 / 2;
+  }
+
+  .section__why .card {
+    grid-column: 2 / -1;
+  }
+
+  .section__what .card {
+    grid-column: 1 / -1;
+  }
+
+  .section__how .section__title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .section__how .section__title-description {
+    grid-column: 2 / -1;
+  }
+
+  .section__how .card {
+    grid-column: 2 / -1;
+  }
+
+  .section__pictures {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .section__pictures .title {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  .picture {
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .picture__sunset {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+  }
+
+  .picture__icecream {
+    grid-row: 2 / 4;
+    grid-column: 3 / 4;
+  }
+
+  .picture__tape {
+    grid-row: 3 / 5;
+    grid-column: 1 / 2;
+  }
+
+  .picture__street {
+    grid-row: 4 / 5;
+    grid-column: 2 / 4;
+  }
+
+  .footer {
+    padding: 20px;
+    margin-block-start: 60px;
+    aspect-ratio: 3 / 4;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .footer::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .footer::after {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    aspect-ratio: 4 / 3;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .section:not(.section__pictures) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__what {
+    grid-auto-flow: column;
+  }
+
+  .section__what .card {
+    grid-column: auto;
+    grid-row: 2 / auto;
+  }
+
+  .footer {
+    aspect-ratio: 4 / 3;
+  }
+}
+  /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
