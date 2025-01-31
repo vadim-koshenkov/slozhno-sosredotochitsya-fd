@@ -4,9 +4,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: var(--bg-color);
 }
 
 .header {
+  block-size: 100vh;
   min-block-size: 668px;
   padding: 10px;
   margin-block-end: 40px;
@@ -15,34 +17,34 @@
   position: relative;
 }
 
-.header::before {
+.decorated-zone::before {
   content: '';
   position: absolute;
   top: 10px;
   right: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--corner-decor-color);
+  border-top: 1px solid var(--corner-decor-color);
 }
 
-.header::after {
+.decorated-zone::after {
   content: '';
   position: absolute;
   bottom: 10px;
   left: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--corner-decor-color);
+  border-bottom: 1px solid var(--corner-decor-color);
 }
 
 .header__decor-item {
-  display: block;
+  display: var(--decor-item-condition);
   position: absolute;
   right: 38px;
   top: 10px;
-  color: var(--accent-color);
+  color: var(--corner-decor-color);
   text-transform: uppercase;
   line-height: 1.4;
 }
@@ -55,7 +57,7 @@
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color);
+  background-color: var(--corner-decor-color);
   box-shadow: 0px 0px 4px 2px #FF0070;
 }
 
@@ -68,7 +70,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: var(--accent-color);
+  color: var(--menu-color);
 }
 
 .header__theme-menu-button {
@@ -78,7 +80,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid #FF007066;
+  border: 1px solid var(--menu-hover-color);
   cursor: pointer;
 }
 
@@ -96,6 +98,7 @@
 }
 
 .title {
+  max-inline-size: 315px;
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
@@ -105,7 +108,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
-  color: var(--title-color);
+  color: var(--main-title-color);
 }
 
 .header__title-description {
@@ -115,7 +118,7 @@
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--bg-color);
+  color: var(--card-title-color);
 }
 
 .section {
@@ -129,7 +132,7 @@
 }
 
 .section__title {
-  color: var(--accent-color);
+  color: var(--section-title-color);
 }
 
 .card {
@@ -174,33 +177,12 @@
 }
 
 .footer {
+  block-size: 100vh;
   min-block-size: 668px;
   margin-block-start: 40px;
   padding: 10px;
   display: grid;
   position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  inline-size: 25px;
-  block-size: 25px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
-}
-
-.footer::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  inline-size: 25px;
-  block-size: 25px;
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
 }
 
 .footer__title {
@@ -209,7 +191,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--accent-color);
-  color: var(--title-color);
+  color: var(--main-title-color);
 }
 
 @media (width >= 768px) {
@@ -235,12 +217,12 @@
     right: 50px;
   }
 
-  .header::before {
+  .decorated-zone::before {
     top: 20px;
     right: 20px;
   }
 
-  .header::after {
+  .decorated-zone::after {
     bottom: 20px;
     left: 20px;
   }
@@ -327,16 +309,6 @@
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-
-  .footer::before {
-    top: 20px;
-    right: 20px;
-  }
-
-  .footer::after {
-    bottom: 20px;
-    left: 20px;
-  }
 }
 
 @media (width >= 1024px) {
@@ -358,13 +330,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .section__what {
-    grid-auto-flow: column;
+  .section__what .title {
+    grid-column: 1 / -1;
   }
 
   .section__what .card {
     grid-column: auto;
-    grid-row: 2 / auto;
   }
 
   .footer {

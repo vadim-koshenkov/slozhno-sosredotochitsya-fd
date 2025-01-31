@@ -9,11 +9,17 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --menu-color: #353430;
+  --menu-hover-color: #32312D66;
+  --main-title-color: #ffc2e6;
+  --card-title-color: #353430;
+  --section-title-color: #353430;
   --text-color: #353430;
-  --title-color: #ffc2e6;
   --accent-color: #ff8dcb;
   --bg-color: #fff1f7;
   --bg-image: url(../images/cover-image-light.png);
+  --corner-decor-color: #353430;
+  --decor-item-condition: none;
 }
 
 .theme-light .page {
@@ -24,80 +30,18 @@
   display: none;
 }
 
-.theme-light .header::before {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .header::after {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .footer::before {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .footer::after {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .header__theme-menu-list {
-  color: var(--text-color);
-}
-
-.theme-light .title-decor {
-  color: var(--text-color);
-}
-
-.theme-light .section__title {
-  color: var(--text-color);
-} 
-
-.theme-light .header__theme-menu-button:hover {
-  border: 1px solid #32312D66;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
-  --text-color: #353430;
-  --title-color: #ffc2e6;
-  --accent-color: #ff8dcb;
-  --bg-color: #fff1f7;
-  --bg-image: url(../images/cover-image-light.png);
-  }
-
-  .header__decor-item {
-    display: none;
-  }
-  
-  .header::before {
-    --accent-color: var(--text-color);
-  }
-  
-  .header::after {
-    --accent-color: var(--text-color);
-  }
-  
-  .footer::before {
-    --accent-color: var(--text-color);
-  }
-  
-  .footer::after {
-    --accent-color: var(--text-color);
-  }
-  
-  .header__theme-menu-list {
-    color: var(--text-color);
-  }
-  
-  .title-decor {
-    color: var(--text-color);
-  }
-  
-  .section__title {
-    color: var(--text-color);
-  } 
-  
-  .header__theme-menu-button:hover {
-    border: 1px solid #32312D66;
+    --menu-color: #353430;
+    --menu-hover-color: #32312D66;
+    --main-title-color: #ffc2e6;
+    --card-title-color: #353430;
+    --section-title-color: #353430;
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
+    --corner-decor-color: #353430;
+    --decor-item-condition: none;
   }
 }

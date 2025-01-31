@@ -4,9 +4,15 @@
 */
 
 :root {
+  --menu-color: #ff0070;
+  --menu-hover-color: #FF007066;
+  --main-title-color: #db00ff;
+  --card-title-color: #000028;
+  --section-title-color: #ff0070;
   --text-color: #f1b2ce;
-  --title-color: #db00ff;
   --accent-color: #ff0070;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
+  --corner-decor-color: #ff0070;
+  --decor-item-condition: block;
 }
