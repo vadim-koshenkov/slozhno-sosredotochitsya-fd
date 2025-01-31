@@ -197,7 +197,6 @@
   .header {
     padding: 20px;
     margin-block-end: 60px;
-    aspect-ratio: 3 / 4;
   }
 
   .header__title {
@@ -311,10 +310,6 @@
 }
 
 @media (width >= 1024px) {
-  .header {
-    aspect-ratio: 4 / 3;
-  }
-
   .header__theme-menu {
     justify-self: center;
     align-self: start;
