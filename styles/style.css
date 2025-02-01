@@ -301,7 +301,6 @@
   .footer {
     padding: 20px;
     margin-block-start: 60px;
-    aspect-ratio: 3 / 4;
   }
 
   .footer__title {
@@ -330,10 +329,6 @@
 
   .section__what .card {
     grid-column: auto;
-  }
-
-  .footer {
-    aspect-ratio: 4 / 3;
   }
 }
   /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
